@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[left=0.3cm,top=0.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+
+\begin{document}
+
+
+\pagenumbering{gobble}
+\section*{\huge Model directory}
+\begin{verbatim}
+{model_path}
+\end{verbatim}
+
+\begin{minipage}{0.5\linewidth}
+\section*{\Huge Initial parameters}
+
+log M$_{\rm 1,i}$ = %.3f (M$_{\rm 1,i}$=%.3f Msun)
+
+M$_{\rm 2,i}$ = %.3f Msun ($q_{\rm i}$= %.3f)
+
+log P$_{\rm orb,i}$ = %.3f (P$_{\rm orb,i}= %.3f$ days)
+
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+
+
+\section*{\Huge  Summary file}
+
+{summary_file}
+
+\end{minipage}
+
+\section*{\huge Birth rate $R_\mathrm{binary}$ and Predicted number $N_\mathrm{binary}$\newline inside a grid pixel}
+
+\begin{minipage}{0.5\linewidth}
+Considering a grid pixel having size of 
+	\begin{itemize}
+		\item $[{\rm \,log\,} M_{\mathrm 1,i},\,{\rm \,log\,} M_{\mathrm 1,i}+\Delta{\rm \,log\,} M_{\mathrm 1,i}]$
+		\item $[q_{\mathrm i},\,q_{\mathrm i}+\Delta q_{\mathrm i}]$
+		\item $[{\rm \,log\,} P_{\mathrm orb,i},\,{\rm \,log\,} P_{\mathrm orb,i}+\Delta{\rm \,log\,} P_{\mathrm orb,i}]$
+	\end{itemize}
+	By default, \newline$(\Delta{\rm \,log\,} M_{\mathrm 1,i},\,\Delta q_{\mathrm i},\, \Delta{\rm \,log\,} P_{\mathrm orb,i})=(0.05,\,0.05,\,0.025)$
+\begin{equation}
+	\mathrm{IMF} \propto M_{\mathrm 1,i}^{-\alpha_\mathrm{IMF}},
+\end{equation}
+where
+\begin{equation}
+	\begin{cases}
+	    \alpha_\mathrm{IMF}=0.3~~~0.01\leq M_{\mathrm 1,i}/M_\odot < 0.08\\
+		\alpha_\mathrm{IMF}=1.3~~~0.08\leq M_{\mathrm 1,i}/M_\odot < 0.50\\
+		\alpha_\mathrm{IMF}=\alpha~~~0.50\leq M_{\mathrm 1,i}/M_\odot \\
+	\end{cases},
+	\label{IMF}
+\end{equation}
+\begin{equation}
+    f_{q_{\mathrm i}} \propto q_{\mathrm i}^{-\beta}
+    \label{f_qi}
+\end{equation}
+\begin{equation}
+	f_{{\rm log}P_{\rm orb,i}} \propto {\rm log}P_{\rm orb,i}^{-\gamma}.
+    \label{f_logpi}
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	\textbf{Predicted number} of a system with given lifetime (see following pages for lifetimes) and initial parameters:
+\begin{equation*}
+	\begin{split}
+		& N_\mathrm{binary} = \mathrm{ SFR\times}\, {\rm \,lifetime\,}\times\\
+		&\frac{ \int_{\rm pixel~size}C\times  \mathrm{IMF}\times M_{\rm 1,i}(1+q_{\rm i})  f_{q_\mathrm{i}} f_{\mathrm{log}\,P_\mathrm{orb,i}} 
+	{\rm \,d\,} M_{\mathrm 1,i}{\rm \,d\,} q_\mathrm{i} {\rm \,d\,} \mathrm{log}\,P_\mathrm{orb,i}}
+	{<M_{\rm binary}>}
+	\end{split}
+\end{equation*}
+	and \textbf{birth rate} is given by
+\begin{equation*}
+	\begin{split}
+		& R_\mathrm{binary} = \mathrm{ SFR\times}\\
+		&\frac{ \int_{\rm pixel~size} C\times \mathrm{IMF}\times M_{\rm 1,i}(1+q_{\rm i})  f_{q_\mathrm{i}} f_{\mathrm{log}\,P_\mathrm{orb,i}} 
+	{\rm \,d\,} M_{\mathrm 1,i}{\rm \,d\,} q_\mathrm{i} {\rm \,d\,} \mathrm{log}\,P_\mathrm{orb,i}}
+	{<M_{\rm binary}>}
+	\end{split}
+\end{equation*}
+
+	\begin{itemize}
+		\item ${\rm IMF}\times f_{q_{\rm i}} \times f_{{\rm log}P_{\rm orb,i}}$: \textbf{number} fraction of binary in this pixel
+		\item $C\times{\rm IMF}\times M_{\rm 1,i}\times(1+q_{\rm i}) \times f_{q_{\rm i}} \times f_{{\rm log}P_{\rm orb,i}}$: \textbf{Mass} fraction of binary in this pixel, where C is the normalization factor
+		\item $<M_{\rm binary}>$: average binary mass over this grid pixel 
+		\item SFR$\times$lifetime: total mass for forming binaries
+	\end{itemize}
+\end{minipage}\newline
+%\begin{minipage}{0.5\linewidth}
+%\end{minipage}
+
+
+
+%\begin{equation*}
+%	R_\mathrm{binary} \propto \mathrm{ SFR} \times \int_{V} \mathrm{IMF} \times f_{q_\mathrm{i}} \times f_{\mathrm{log}\,P_\mathrm{orb,i}}
+%	{\rm \,d\,} M_{\mathrm 1,i}{\rm \,d\,} q_\mathrm{i} {\rm \,d\,} \mathrm{log}\,P_\mathrm{orb,i}
+%    \label{birth_rate}
+%\end{equation*}
+%\begin{center}
+%	Here $V$ is the volume of a pixel in the model grid, whose size is set to be  $({\rm \,d\,log\,} M_{\mathrm 1,i},{\rm \,d\,}\,q_\mathrm{i},\, {\rm \,d\,} \mathrm{log}\,P_\mathrm{orb,i}) = (0.05,\,0.05,\,0.025)$.
+%\end{center}\newline
+
+
+
+\subsection*{\huge  Birth rates with different initial distributions}
+
+Assuming SFR $=0.05\,M_\odot\,{\rm yr}^{-1}$,
+\begin{itemize}
+	\item $(\alpha,\,\beta,\,\gamma)=(2.3,\,0.1,\,0.55)$ [Kroupa and Sana]: 
+		$R_\mathrm{binary}=$
+		{Rbirth_23_01_055} [1/yr]
+	\item $(\alpha,\,\beta,\,\gamma)=(2.7,\,0.1,\,0.55)$ [steeper IMF]: 
+		$R_\mathrm{binary}=$
+		{Rbirth_27_01_055} [1/yr]
+	\item $(\alpha,\,\beta,\,\gamma)=(2.3,\,0,\,0)$ [flat qi and logPorbi]: 
+		$R_\mathrm{binary}=$
+		{Rbirth_23_0_0} [1/yr]
+	\item $(\alpha,\,\beta,\,\gamma)=(0,\,0,\,0)$ [all flat]: 
+		$R_\mathrm{binary}=$
+		{Rbirth_0_0_0} [1/yr]
+\end{itemize}
+
+\end{document}

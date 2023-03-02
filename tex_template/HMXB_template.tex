@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[left=0.3cm,top=0.5cm,bottom=0.5cm]{geometry}
+
+\begin{document}
+\pagenumbering{gobble}
+{\Huge \bf BH Wind-fed X-ray binary}
+
+{\normalsize ref: Sen and Xu (2021): https://ui.adsabs.harvard.edu/abs/2021A\%26A...652A.138S/abstract}
+
+
+}
+
+\large
+
+log M$_{\rm 1,i}$ = %.3f (M$_{\rm 1,i}$=%.3f Msun)
+
+M$_{\rm 2,i}$ = %.3f Msun ($q_{\rm i}$= %.3f)
+
+log P$_{\rm orb,i}$ = %.3f (P$_{\rm orb,i}= %.3f$ days)
+
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+	\item $\eta_{\rm j}$: efficiency of angular momentum accretion
+		\begin{equation}
+			j=\frac{1}{2}\Omega_{\rm orb} R_{\rm acc}^2 \eta_{\rm j}
+		\end{equation}
+	\item $\beta_{\rm w}$: $\beta$-law for wind velocity
+		\begin{equation}
+			\upsilon_{\rm w}= \upsilon_\infty \left( 1 - \frac{R_{\rm OB\,or\,WR}}{a}\right)^{\beta_{\rm w}}
+		\end{equation}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+	\item $R_{\rm disk}$: circularization radius
+		\begin{equation}
+			R_{\rm disk}=\frac{j^2}{GM_{\rm BH}}
+		\end{equation}
+	\item $\gamma_\pm$: spin parameter
+		\begin{equation}
+			R_{\rm ISCO} = 6\frac{GM_{\rm BH}}{c^2}\gamma_\pm
+		\end{equation}
+\end{itemize}
+\end{minipage}
+
+\begin{table}[!htbp]
+	\centering
+\large
+	%\caption{(1) $R_{\rm disk}/R_{\rm ISCO}$: Accretion disk exists around BH if $R_{\rm disk}/R_{\rm ISCO} > 1$ (2) $L_{\rm X}$: X-ray luminosity if disk exists }
+	\caption{\Large Accretion disk exists around BH if $R_{\rm disk}/R_{\rm ISCO} > 1$ }
+\begin{tabular}{c|l|l|l|l}
+\hline
+\hline
+                                             & \multicolumn{2}{l|}{BH+OB ($\upsilon_\infty/\upsilon_{\rm esc}=2.6$)}                & \multicolumn{2}{l}{BH+WR ($\upsilon_\infty/\upsilon_{\rm esc}=1.3$)}                \\ \hline
+$(\eta_{\rm j},\,\beta_{\rm w},\,\gamma_\pm)$ & \multicolumn{1}{l|}{$R_{\rm disk}/R_{\rm ISCO}$} & $L_{\rm X}$ {[}10$^{38}$ erg/s{]} & \multicolumn{1}{l|}{$R_{\rm disk}/R_{\rm ISCO}$} & $L_{\rm X}$ {[}10$^{38}$ erg/s{]} \\ 
+					     &  &      if disk exists          &  &  if disk exists               \\ \hline
+$(1/3,\,1,\,1)$                              & 
+	{BHOB_disk_0}           & {BHOB_Lx_0}                   & {BHWR_disk_0}           & {BHWR_Lx_0}                   \\ \hline
+	$(\textbf{1},\,1,\,1)$                                & 
+	{BHOB_disk_1}           & {BHOB_Lx_1}                   & {BHWR_disk_1}           & {BHWR_Lx_1}                   \\ \hline
+	$(1/3,\,\textbf{0.8},\,1)$                            & 
+	{BHOB_disk_2}           & {BHOB_Lx_2}                   & {BHWR_disk_2}           & {BHWR_Lx_2}                   \\ \hline
+	$(1/3,\,1,\,\textbf{1/6})$                            & 
+	{BHOB_disk_3}           & {BHOB_Lx_3}                   & {BHWR_disk_3}           & {BHWR_Lx_3}                   \\ \hline
+	$(1/3,\,1,\,\textbf{3/2})$                            & 
+	{BHOB_disk_4}           & {BHOB_Lx_4}                   & {BHWR_disk_4}           & {BHWR_Lx_4}                   \\ \hline
+	        \multicolumn{5}{l}{\textbf{Note}: \normalsize here "-1" suggests that this binary merges before He+BH or OB+BH phase} \\\hline
+
+\end{tabular}
+\end{table}
+
+\textbf{\Large X-ray emission:}
+\normalsize
+$L_{\rm X}$ is the X-ray luminosity assuming that accretion disk exists and it is geometrically thin but optically thick,
+\begin{equation}
+	L_{\rm X}=\frac{1}{2}\frac{GM_{\rm BH}\dot{M}_{\rm acc}}{R_{\rm ISCO}},
+\end{equation}
+which means half of the potential energy is transferred into radiation power through viscosity inside the disk. In addition, $L_{\rm Edd}$ is expected to be the upper limit of $L_{\rm X}$. For thick disk, considerable fraction of potential energy is tranferred into  kinetic energy, which gives lower $L_{\rm X}$. Without accretion disk, $L_{\rm X}$ should be given by Bremsstrahlung, which is much weaker than the disk case.
+
+
+{\Large \textbf{What about NS?}}  
+\normalsize
+Here we only consider BH, which means that the inner edge of accretion disk can be easily given by the innermost stable orbit. In the above calculations, we simply take $R_{\rm ISCO}$ as the inner edge of accretion disk $R_{\rm disk,inner}$ around BH. For NS, life becomes way more difficult because NS is strongly magnetized.  One way to determine $R_{\rm disk,inner}$ for NS is to calculate the size of magnetosphere, which is defined by the balance between the magnetic pressure and the ram pressure of accreted material (e.g. Eqs. (2) and (3) in Xu \& Li 2019: https://ui.adsabs.harvard.edu/abs/2019ApJ...872..102X/abstract). Various factors can affect this calculation, like the properties of accretion flow around the magnetosphere (thin disk, ADAF), the magnetic field of NS (dipole or multipole), the coupling between field line and material (changing the geometry of field line), and the rotation of NS (propeller phase). 
+
+{\Large \textbf{Be XRB}:}
+\normalsize
+One can go to the BH/NS+OB page to check whether the OB star shows Be feature by $\upsilon_{\rm rot}/\upsilon_{\rm crit}$. Considering the details of X-ray emission by Be XRB is beyond the scope of this code. Generally, there are three types of X-ray phenomena in Be XRBs \newline(see https://ui.adsabs.harvard.edu/abs/2011Ap\%26SS.332....1R/abstract for detailed review). (1) Type I outburst, this is related to the interaction between Be disk and NS during periastron passage. (2) Type II outburst, it can easily can exceed the Eddington luminosity of NS and last for many orbital periods, whose origin is still unclear (it seems to prefer close orbit and may be caused by some instability inside the Be disk). (3) Persistent X-ray emission, this happens with the systems having low eccentricity or the orbial phase far from the periastron and it featured by dim but persistent X-ray emission. These phenomena may be related to different accretion mode and contribute to the spin evolution of NS (also see Xu \& Li 2019). 
+
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[left=0.3cm,top=0.5cm]{geometry}
+\begin{document}
+\pagenumbering{gobble}
+{\Huge \bf BH/NS + OB phase}
+\large
+
+log M$_{\rm 1,i}$ = %.3f (M$_{\rm 1,i}$=%.3f Msun)
+
+M$_{\rm 2,i}$ = %.3f Msun ($q_{\rm i}$= %.3f)
+
+log P$_{\rm orb,i}$ = %.3f (P$_{\rm orb,i}= %.3f$ days)
+
+Age at the core He depletiopn of primary: %.3f Myrs
+
+lifetime of BH/NS + OB phase: %.3f Myrs
+
+
+\begin{table}[!htbp]
+\large
+\centering
+\caption{\huge Pre-SN properties of primary star}
+\large
+\begin{tabular}{ccccccc}
+\hline
+\hline
+%\multicolumn{1}{c|}{} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$P_{\rm orb}$\\ {[}days{]}\end{tabular}}        & eccentricity & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$\upsilon_{\rm OB}$\\ {[}km/s{]}\end{tabular}} & \begin{tabular}[c]{@{}l@{}}$q$\\ {[}$M_{\rm BH}/M_{\rm OB}${]}\end{tabular} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $P_{\rm orb}$\\ {[}days{]}\end{tabular}}                                                                                          \\
+%orbital parameter    & {BHOB_Porb}   & {BHOB_e}     & {BHOB_K2}      & {BHOB_q}  & {BHOB_s1_He00_Porb}\\\hline
+		      \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm primary}$\\ {[}$M_\odot${]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm He,core}$\\ {[}$M_\odot${]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm C,core}$\\ {[}$M_\odot${]}\end{tabular}}   &  \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $R_{\rm star}$\\ {[}$R_\odot${]}\end{tabular}} &   \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $R_{\rm He,core}$\\ {[}$R_\odot${]}\end{tabular}} &  pre-SN $R_{\rm star}/R_{\rm RL}$ \\
+			           {BHOB_s1_He00_M}         & {BHOB_s1_He00_MHe}      & {BHOB_s1_He00_MC}    &  {BHOB_s1_He00_Rstar}  & {BHOB_s1_He00_RHe}   &  {BHOB_s1_He00_Rstar_div_RL}\\ \hline
+			                       
+		     \begin{tabular}[c]{@{}l@{}}log $L$\\ {[}$L_\odot${]}\end{tabular}     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}log $T_{\rm eff}$\\ {[}K{]}\end{tabular}}    &   $X_{\rm H,surf}$ & \begin{tabular}[c]{@{}l@{}}log $\dot{M}_{\rm wind}$\\ {[}$M_\odot$ yr$^{-1}${]}\end{tabular}  & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}log$
+		      \dot{M}_{\rm mass transfer}$ at SN\\ {[}$M_\odot/{\rm yr}^{-1}${]}\end{tabular}} \\
+    {BHOB_s1_He00_logL}   & {BHOB_s1_He00_logTeff}  & {BHOB_s1_He00_Xsurf}   &{BHOB_s1_He00_logMdot}   & {BHOB_s1_He00_logMdot_mtr}   \\ \hline
+       \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$\upsilon_{\rm rot}$\\ {[}km/s{]}\end{tabular}} & \multicolumn{1}{c}{$\upsilon_{\rm rot}/\upsilon_{\rm crit}$}     &  $X_{\rm He,surf}$ & $X_{\rm N14,surf}$  &  $X_{\rm He,center}$  &  $X_{\rm C,center}$  \\
+         {BHOB_s1_He00_Vrot}      & {BHOB_s1_He00_v_div_vc}    &   {BHOB_s1_He00_Ysurf} & {BHOB_s1_He00_N14surf}  &   {BHOB_s1_He00_XHecent}  &   {BHOB_s1_He00_XCcent}    \\\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[!htbp]
+\large
+\centering
+\caption{\huge Properties of BH+OB }
+\large
+\begin{tabular}{l|ccccc}
+\hline
+\hline
+\multicolumn{1}{c|}{} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$P_{\rm orb}$\\ {[}days{]}\end{tabular}}        & eccentricity & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$\upsilon_{\rm OB}$\\ {[}km/s{]}\end{tabular}} & \begin{tabular}[c]{@{}l@{}}$q$\\ {[}$M_{\rm BH}/M_{\rm OB}${]}\end{tabular} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $P_{\rm orb}$\\ {[}days{]}\end{tabular}}                                                                                          \\
+orbital parameter    & {BHOB_Porb}   & {BHOB_e}     & {BHOB_K2}      & {BHOB_q}  & {BHOB_s1_He00_Porb}\\
+	\cline{2-6}
+	& \multicolumn{5}{l}{\textbf{Note}: \normalsize Kick is not included here and post-SN orbit: appendix in Hurley+2002}\\
+	\hline
+		     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm BH}$\\ {[}$M_\odot${]}\end{tabular}}  &
+			     \multicolumn{2}{c}{BH mass method} & \multicolumn{2}{c}{\begin{tabular}[c]{@{}c@{}}PPISN?\\ {[}https://arxiv.org/abs/1810.13412{]}\end{tabular}}\\
+			     compact object    & {BHOB_MBH}       &  
+			     \multicolumn{2}{c}{
+				     {BH_mass_calculation}
+				     } & 
+				     \multicolumn{2}{c}{
+					     {BHOB_PPISN_flag}
+					     }\\ \cline{2-6}
+%		     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm BH}$\\ {[}$M_\odot${]}\end{tabular}}  & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm primary}$\\ {[}$M_\odot${]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm He,core}$\\ {[}$M_\odot${]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm C,core}$\\ {[}$M_\odot${]}\end{tabular}}   & BH mass method\\
+%			     compact object    & {BHOB_MBH}       & {BHOB_s1_He00_M}         & {BHOB_s1_He00_MHe}      & {BHOB_s1_He00_MC}    &   {BH_mass_calculation}  \\
+%			                       & \multicolumn{5}{l}{PPISN (https://arxiv.org/abs/1810.13412)?
+%					       {BHOB_PPISN_flag}
+%					       }    \\
+					       & \multicolumn{5}{l}{\textbf{Note:} The 'BH mass method' option only works for non-PPISN systems.}\\
+					       & \multicolumn{5}{l}{If PPISN occurs, BH mass is solely determined by the He core mass.}\\
+					       & \multicolumn{5}{l}{$M_{\rm BH}$ is fixed to be 1.4 $M_\odot$ if it is NS. (Kick is not included)}\\\hline
+		     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm OB}$\\ {[}$M_\odot${]}\end{tabular}}    & \begin{tabular}[c]{@{}l@{}}log $L$\\ {[}$L_\odot${]}\end{tabular}     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}log $T_{\rm eff}$\\ {[}K{]}\end{tabular}}      & $X_{\rm H,surf}$ & \begin{tabular}[c]{@{}l@{}}log $\dot{M}_{\rm wind}$\\ {[}$M_\odot$ yr$^{-1}${]}\end{tabular} \\
+OB star   & {BHOB_s2_M}    & {BHOB_s2_logL}   & {BHOB_s2_logTeff}  & {BHOB_s2_Xsurf}   &{BHOB_s2_logMdot}     \\
+	       \cline{2-6}
+                     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$\upsilon_{\rm rot}$\\ {[}km/s{]}\end{tabular}} & \multicolumn{1}{c}{$\upsilon_{\rm rot}/\upsilon_{\rm crit}$} &     $X_{\rm H,center}$       &  $X_{\rm He,surf}$ & $X_{\rm N14,surf}$\\
+         & {BHOB_s2_Vrot}      & {BHOB_s2_v_div_vc} &   {BHOB_s2_Xcent}      &   {BHOB_s2_Ysurf} & {BHOB_s2_N14surf} \\\hline
+\end{tabular}
+\end{table}
+\end{document}

@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[left=0.3cm,top=0.5cm]{geometry}
+
+\begin{document}
+\pagenumbering{gobble}
+{\Huge \bf BH + BH}
+\large
+
+log M$_{\rm 1,i}$ = %.3f (M$_{\rm 1,i}$=%.3f Msun)
+
+M$_{\rm 2,i}$ = %.3f Msun ($q_{\rm i}$= %.3f)
+
+log P$_{\rm orb,i}$ = %.3f (P$_{\rm orb,i}= %.3f$ days)
+
+\begin{table}[!htbp]
+\large
+\centering
+\begin{tabular}{cccccc}
+\hline
+\hline
+	\multicolumn{1}{c}{} &  \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm He,core,2}$\\ {[}$M_\odot${]}\end{tabular}}    &\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}pre-SN $M_{\rm C,core,2}$\\ {[}$M_\odot${]}\end{tabular}}    & PPISN?  &  $M_{\rm c,core,2}$ method  & BH mass method   \\
+		&  {BBH_s2_He05_MHe}     & {BBH_s2_He00_MC}      & {BBH_PPISN_flag}  & {BBH_s2_MC_method} & {BH_mass_calculation} \\
+		\multicolumn{6}{l}{\textbf{Note}: \normalsize In the SMC grid, many massive secondary stars are terimated during core He burning}\\
+		\multicolumn{6}{l}{ \normalsize In that case, carbon core mass is given by a fitting forumla based on the SMC models if using "BH mass method = ComBinE"}\\
+		\hline
+
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm BH,1}$\\ {[}$M_\odot${]}\end{tabular}}        & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm BH,2}$\\ {[}$M_\odot${]}\end{tabular}}    &\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$q_{\rm BBH}$\\ {[}$M_{\rm BH,2}/M_{\rm BH,1}${]}\end{tabular}}    & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}min$[q_{\rm BBH},\,q_{\rm BBH}^{-1}]$\\ {[}$M_{\rm BH,secondary}/M_{\rm BH,primary}${]}\end{tabular}}  &  \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm chirp}$\\ {[}$M_\odot${]}\end{tabular}}       \\
+	& {BBH_MBH1}   & {BBH_MBH2}     & {BBH_q1}      & {BBH_q2}  & {BBH_Mchirp} \\
+	& \multicolumn{5}{l}{\textbf{Note}: \normalsize here "-1" suggests that this binary merges before this phase} \\\hline
+                     & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}merger time\\ {[}Gyrs{]}\end{tabular}}    &  \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}delay time\\ {[}Gyrs{]}\end{tabular}}  &\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}birth redshift\\ if merging at $z=0$\end{tabular}} &  $X_{\rm eff}$ &  eccentricity   \\
+			     & {BBH_tau_merger}       & {BBH_tau_delay}         & {BBH_birthz}      & {BBH_Xeff}    &    {BBH_ecc} \\\hline
+		     & \multicolumn{4}{l}{$f(e)$ [defined by merger time (e) = merger time (e=0)$\times f(e)$]:
+			     {BBH_ecc_factor}
+		     }     \\\hline 
+%		     & \multicolumn{4}{l}{
+%			     {BBH_ecc_factor}
+%			     }    \\\hline
+%		     & \multicolumn{4}{l}{$f(e)$ [merger time (e) = merger time (e=0)$\times f(e)$]}\\ 
+%		     & \multicolumn{4}{l}{
+%			     {BBH_ecc_factor}
+%			     }    \\\hline
+\end{tabular}
+\end{table}
+
+\textbf{\Large Eccentricity correction factor $f(e)$} is given by Mandel (2021): 
+\newline(https://ui.adsabs.harvard.edu/abs/2021RNAAS...5..223M/abstract)
+\begin{equation}
+	f(e) = (1+0.27 e^{10}+0.33 e^{20} + 0.2 e^{1000})(1-e^2)^{7/2}
+\end{equation}
+
+\textbf{\Large Effective spin $X_{\rm eff}$} (a rough estimation and only meaningful for binary BH): assuming efficient angular momentum transfer inside star ($a_{\rm spin}$ at birth is 0) and $a_{\rm spin}=1$ if orbital period of WR+BH is less than 0.3 day (spun up by tides, Qin et al. 2018:\newline https://www.aanda.org/articles/aa/full\_html/2018/08/aa32839-18/aa32839-18.html). Accretion-induced spin up is ignored since we assume BH accretion is limited by the Eddington rate, which is far below the mass transfer rate under thermal timescale. For the effect of conservative mass transfer, see Fragos and McClintock (2015): https://ui.adsabs.harvard.edu/abs/2015ApJ...800...17F/abstract\newline
+
+
+\textbf{Birth Redshift:}\newline
+\begin{minipage}{0.5\linewidth}
+For given redshift $z$, the corresponding cosmic time $t$ is given by
+\begin{equation}
+    t(z) = t_\mathrm{H}\int_z^\infty\frac{\dd z'}{(1+z')E(z')},
+    \label{t_H}
+\end{equation}
+where $t_\mathrm{H}$ is the Hubble time and
+\begin{equation}
+    E(z) = \sqrt{\Omega_M(1+z)^3+\Omega_\mathrm{k}(1+z)^2+\Omega_\lambda},
+\end{equation}
+where $(\Omega_\mathrm{M},\,\Omega_\mathrm{k},\,\Omega_\Lambda)$ is taken to be $(0.3,\,0.7,\,0.0)$
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	To directly get redshift from cosmic time, I adopt the following fitting formula (Carmeli 2006),
+\begin{equation}
+	t(z)=\frac{C_1}{C_2+(C_3+z)^2} {\,\rm Gyr}
+    \label{z_fitting}
+\end{equation}
+	where $C_{1-3}$ are fitting parameters. With this equation, the Hubble time is given by $t_{\rm H}=t(z=0)$.  Comparing with Eq. (2), I get 70.9,-5.2, and 3.2 for $C_{1-3}$. The values of $C_{1-3}$ varies with  $(\Omega_\mathrm{M},\,\Omega_\mathrm{k},\,\Omega_\Lambda)$. Eq. (4) can be rewroten as
+	\begin{equation}
+		z(t)=\sqrt{\frac{C_1}{t}-C_2} - C_3
+	\end{equation}
+
+\end{minipage}\newline
+
+With Eq. (4) and (5), \textbf{birth redshift (if merging at $z=0$)} can be easily evaluated by
+\begin{equation}
+	{\rm birth~redshift}=z(t={\rm birth~time})
+	{\rm ,~where~birth~time}=t(z=0) - {\rm delay~time}
+\end{equation}
+
+\end{document}

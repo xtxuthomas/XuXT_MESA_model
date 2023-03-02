@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[left=0.3cm,top=0.5cm]{geometry}
+\begin{document}
+\pagenumbering{gobble}
+{\Huge \bf BH/NS + He phase}
+\large
+
+log M$_{\rm 1,i}$ = %.3f (M$_{\rm 1,i}$=%.3f Msun)
+
+M$_{\rm 2,i}$ = %.3f Msun ($q_{\rm i}$= %.3f)
+
+log P$_{\rm orb,i}$ = %.3f (P$_{\rm orb,i}= %.3f$ days)
+
+Age at the middle of core He burning of secondary: %.3f Myrs
+
+lifetime of BH/NS + He phase: %.3f Myrs \newline
+
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+	\item Common envelope evolution if
+		\begin{itemize}
+	\item $q_0 < q_{\rm min}$
+	\item \bf{or} $P_{\rm orb,0} > P_{\rm orb,max}$
+		\end{itemize}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{itemize}
+	\item Stable mass transfer if
+		\begin{itemize}
+	\item $q_0 > q_{\rm min}$
+	\item \bf{and} $P_{\rm orb,0} < P_{\rm orb,max}$
+		\end{itemize}
+\end{itemize}
+\end{minipage}
+
+\begin{table}[!htbp]
+\large
+\centering
+	\caption{See Eqs. (16.20) and (16.30) in  Tauris and van den Heuvel (2006) for details. Reminder: Tauris and van den Heuvel use a different definition for mass ratio (donor/accretor). }
+\begin{tabular}{l|ccccc}
+\hline
+\hline
+\multicolumn{1}{c|}{controls of } & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$q_{\rm min}$\\ {[}accretor/donor{]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$P_{\rm orb,max}$\\ {[}days{]}\end{tabular}} &$\beta_{\rm RLO}$  & $\alpha_{\rm RLO}$ & $\eta_{\rm CE}$          \\
+orbital evolution    & {BHWR_qmin}   & {BHWR_porbmax}     & {BHWR_beta}      & {BHWR_alpha}  & {BHWR_etaCE}\\\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[!htbp]
+\large
+\centering
+	\caption{Here we Assume that orbit is rapidly circularized when donor approches RL filling (ref: ComBinE code). Further assuming that $J_{\rm orb}$ keep unchanged before and after circularization, $P_{\rm orb,0}=P_{\rm orb,OB+BH}(1-e_{\rm OB+BH}^2)^{3/2}$ (derived from $J_{\rm orb}$ conservation and Kepler's third law). For BH systems, this circularization process is usually ignorable.}
+\begin{tabular}{l|ccccc}
+\hline
+\hline
+	\multirow{2}{*}{\shortstack[l]{paramters at \\ the RL filling \\ of secondary star \\ (accretion onto BH)}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$q_{\rm 0}$\\ {[}accretor/donor{]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$P_{\rm orb,0}$\\ {[}days{]}\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$a_{\rm 0}$\\ {[}$R_\odot${]}\end{tabular}} & MT type  &           \\
+    & {BHWR_q0}   & {BHWR_porb0}     & {BHWR_a0}      & {BHWR_MT_type}  & \\
+	       \cline{2-6}
+	\multicolumn{1}{c|}{} &\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm BH}$\\ {[}$M_\odot${]}\end{tabular}}  & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm donor}$\\ {[}$M_\odot${]}\end{tabular}} & $X_{\rm H,center,donor}$ & $\lambda_{\rm bind}$  & $\lambda_{\rm bind}$ type\\
+		& {BHOB_MBH}   & {BHWR_s2_RLO_M}     & {BHWR_s2_RLO_ch1}      & {BHWR_s2_RLO_lam_ce}  & {BHWR_lambda_type}\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\large
+\centering
+	\caption{\large Stripped star is determined by the He core of the secondary star at its middle of core He burning (for Case B or late Case A (core H less than 0.2 at RL filling) ). Early Case A case only occurs with BH KicK, which can be calculated by fitting forumla based on detailed models with zero accretion efficiency (not included yet).}
+\begin{tabular}{l|ccccc}
+\hline
+\hline
+	\multirow{4}{*}{\shortstack[l]{paramters of \\ BH/NS + He phase \\ after interaction }} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$q_{\rm f}$\\ {[}accretor/donor{]}\end{tabular}}   & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$P_{\rm orb,f}$\\ {[}days{]}\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$a_{\rm f}$\\ {[}$R_\odot${]}\end{tabular}} & Merger during MT?  &           \\
+    & {BHWR_qf}   & {BHWR_porbf}     & {BHWR_af}      & {BHWR_merger}  & \\
+	       \cline{2-6}
+\multicolumn{1}{c|}{} &\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm BH}$\\ {[}$M_\odot${]}\end{tabular}}  & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$M_{\rm stripped}$\\ {[}$M_\odot${]}\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$R_{\rm RL,stripped}$\\ {[}$R_\odot${]}\end{tabular}}  &  \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$R_{\rm stripped}$\\ {[}$R_\odot${]}\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}$\upsilon_{\rm orb,stripped}$\\ {[}km/s{]}\end{tabular}} \\
+	& {BHOB_MBH}   & {BHWR_s2_He05_MHe}     &   {BHWR_rl_He}   & {BHWR_s2_He05_RHe}   & {BHWR_K2}\\\hline
+\end{tabular}
+\end{table}
+
+\end{document}
